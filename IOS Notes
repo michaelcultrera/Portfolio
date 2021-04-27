@@ -1,0 +1,106 @@
+Things to implement in app:
+ScrollView
+GridView
+List view
+Forms for settings
+Adaptive layouts
+Lazy Stack Views 
+Enumeration to capture/track states of app
+
+Notes about the actual structure of swift programs:
+- protocols are like structs and include methods and properties. The protocol can then be adopted by a class, structure
+Ex. struct SomeStructure: FirstProtocol, AnotherProtocol {
+    // structure definition goes here
+}
+
+Important things if you want a job in IOS development:
+- UI and UX
+- Swift: Basic syntax
+Optionals
+Control Flow (If and Switch Statements)
+Classes, inheritance & initialization
+Error handling
+Objective-C Interoperability
+- MVC (Model-View-Controller)
+- Delegate Pattern
+- Grand Central Dispatch
+- Networking and JSON
+- API's
+- search about the relation java has to iOS 
+- Know Git
+
+- Next work on connecting your app to the internet **** Using JSON
+
+Stack views:
+- include HStack, VStack and ZStack. ZStack allows you to put views ontop of each other
+- HStack VStack can be slow compared to LazyHStack , LazyVStack
+
+
+UX - User Experience deals with how the user interacts with the app and not just the interface
+UI - User Interface deals with how the app actually looks
+
+
+- When dragging your mouse across the screen, a touch event keeps track of the 
+position of your mouse and sends this position to the code (functions)
+
+- Size of array -> array_name.count
+
+Event Handlers
+(Example in Playgrounds uses tools in top left)
+- Set up a function (ie. addAlien) to handle a certain type of event (ie. onTouchMoved)
+- Make a tool (top left dropdown options)
+- Connect the tool to an event(ie. onTouchMoved) and to the corresponding eventHandler (ie. addAlien)
+- append tool to the scene
+
+- the job of the tool is to call the event handler when an event occurs (this might
+be specific to the playground example)
+
+Structs(Specifically ones for declaring views):
+struct MyView: View {
+    var body: some View {
+        Text("Hello, World!")
+    }
+}
+For the above piece of code we are defining our own custom view using the "View" protocol.
+The main requirement of custom views like this one is to fill out the body of the struct. Do not complicate it all we are doing is making a custom view called "MyView".
+
+Swift Important Notes:
+For Loops:
+
+//Use _ instead of a placeholder variable if the variable is not referenced in the for-in loop body.
+
+for _ in 1...3 {
+  print("Olé")
+}
+
+ForEach Loops: 
+ForEach() - inside these brackets goes a range, array etc. something that can be iterated over
+struct ContentView: View {
+    let colors: [Color] = [.red, .green, .blue]
+
+    var body: some View {
+        VStack {
+            ForEach(colors, id: \.self) { color in     //array "colors" is iterated over, id of itself just means iterate over as it is
+                Text(color.description.capitalized)    //"color" is a local variable used for each iteration, ie. 1st iteration color = .red
+                    .padding()
+                    .background(color)
+            }
+        }
+    }
+}
+
+Arrays:
+Number of elements in an array: array_name.count
+
+General Notes:
+When you use methods for instances the order of the methods actually matter so be careful
+ex. Image("pinkbuilding")
+	 .rezisable()          //the order of these things matters
+	 .cornerRadius(30)
+
+Text Notes:
+- a text view on its own will only use the exact amount of space it needs on the interface, to give this view more space use the frame to allocate more space for the text
+- Text Fields: 
+ 
+
+
